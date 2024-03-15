@@ -37,3 +37,7 @@ footer {
     max-width: 100%;
     height: auto;
 }
+.active {
+    background-color: #ddd;
+    color: black;
+}
