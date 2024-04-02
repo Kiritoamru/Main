@@ -1,15 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
+/* Grundlegende Reset-Einstellungen, um Konsistenz über verschiedene Browser hinweg zu gewährleisten */
+body, html {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Stellt sicher, dass der Body mindestens so hoch wie der Viewport ist */
+    background: aliceblue; /* Ein leichter, beruhigender Hintergrundfarbton */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
+
+/* Styling für die Navigationsleiste */
 .navbar {
     background-color: #333;
-    overflow: hidden;
+    padding: 14px 20px; /* Gibt der Navbar ein wenig Raum */
+    overflow: hidden; /* Verhindert Überlaufen von Inhalten */
 }
+
 .navbar a {
     float: left;
     display: block;
@@ -18,35 +24,49 @@ body {
     padding: 14px 20px;
     text-decoration: none;
 }
-.navbar a:hover {
+
+.navbar a:hover, .active {
     background-color: #ddd;
-    color: black;
+    color: black; /* Farbwechsel beim Hovern über Links */
 }
 
+/* Styling für das Header-Banner */
 .header-banner {
     width: 100%;
-    height: 400px;
+    height: 400px; /* Feste Höhe für das Banner */
     background-image: url("../IMG/Head-Banner.webp.svg");
-    background-position: center 20%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /* Stellt sicher, dass das Bild den Container vollständig bedeckt */
 }
+
+/* Anpassungen für den Hauptinhalt und das Bild */
+.main-body {
+    display: flex; /* Macht .main-body zu einem Flex-Container */
+    justify-content: center; /* Zentriert die Inhalte horizontal */
+    flex-grow: 1; /* Erlaubt dem Container, verfügbaren Platz zu nutzen */
+    padding: 20px;
+}
+
+.main-body img {
+    max-width: 100%; /* Stellt sicher, dass das Bild nicht über den Container hinausgeht */
+    height: auto; /* Erhält das Seitenverhältnis des Bildes */
+}
+
+/* Footer-Styling */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: auto;
+    margin-top: auto; /* Drückt den Footer an den unteren Rand des Containers */
 }
-.main-body {
-    padding: 20px;
-    flex: 1;
-}
-.main-body img {
-    max-width: 100%;
-    height: auto;
-}
-.active {
-    background-color: #ddd;
-    color: black;
+
+/* Responsive Anpassungen für den main-Bereich */
+.main, .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert Inhalte horizontal in ihren Containern */
+    justify-content: center; /* Zentriert Inhalte vertikal in ihren Containern */
+    flex-grow: 1; /* Ermöglicht den Containern, den verfügbaren Platz zu füllen */
 }
